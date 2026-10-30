@@ -8,7 +8,7 @@ QueryLens ayuda a analizar consultas PostgreSQL y comprender sus planes de ejecu
 
 ## Documentation language
 
-Keep this and the sibling repository's README.md entirely in English. When editing a README, write the complete document in English. Do not change the application UI language unless requested.
+Keep project documentation, including TODO.md and both repositories' README.md files, entirely in English. When editing a README, write the complete document in English. Do not change the application UI language unless requested.
 
 ## Tecnologías
 

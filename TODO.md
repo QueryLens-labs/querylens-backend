@@ -1,63 +1,62 @@
-# QueryLens — funcionalidades pendientes
+# QueryLens — Pending Features
 
-Este archivo reserva las siguientes fases. La Fase 1 se limita al análisis básico de consultas de lectura y su plan de ejecución.
+This file outlines the upcoming phases. Phase 1 is limited to basic analysis of read queries and their execution plans.
 
-## Fase 1.5 — verificación y estabilización (2026-10-30)
+## Phase 1.5 — Verification and stabilization (2026-10-30)
 
-- [x] Construcción y arranque de frontend, backend y PostgreSQL con Docker Compose; contenedores activos y healthchecks correctos.
-- [x] Verificados 100 productos, 100.000 ventas, FK `sales.product_id → products.id` y permisos de lectura sin permisos de escritura.
-- [x] Persistencia comprobada: el recuento de ventas siguió en 100.000 después de reiniciar PostgreSQL.
-- [x] Flujo real navegador → Nginx → FastAPI → PostgreSQL → `EXPLAIN ANALYZE` → árbol del plan, con JOIN, GROUP BY y ORDER BY.
-- [x] Rechazo de INSERT, UPDATE, DELETE, DROP y múltiples sentencias; error SQL controlado y timeout comprobado.
-- [x] Estados de carga y error comprobados en Chrome; sin excepciones JavaScript.
-- [x] Pytest: 14 pruebas aprobadas. Build de frontend aprobado. `npm audit`: 0 vulnerabilidades tras actualizar Vite a 7.3.7.
-- [x] `docker compose config --quiet` validado.
+- [x] Built and started the frontend, backend, and PostgreSQL with Docker Compose; containers are active and health checks pass.
+- [x] Verified 100 products, 100,000 sales, the `sales.product_id → products.id` foreign key, and read-only permissions.
+- [x] Verified persistence: the sales count remained at 100,000 after restarting PostgreSQL.
+- [x] Verified the live browser → Nginx → FastAPI → PostgreSQL → `EXPLAIN ANALYZE` → plan tree flow, including JOIN, GROUP BY, and ORDER BY.
+- [x] Verified rejection of INSERT, UPDATE, DELETE, DROP, and multiple statements; controlled SQL errors and timeouts were also checked.
+- [x] Checked loading and error states in Chrome; no JavaScript exceptions occurred.
+- [x] Pytest: 14 tests passed. Frontend build passed. `npm audit`: 0 vulnerabilities after upgrading Vite to 7.3.7.
+- [x] Validated `docker compose config --quiet`.
 
-El puerto local 5432 ya estaba ocupado por otro PostgreSQL; la verificación usó 55432 y `.env.example` queda configurado con ese puerto para el entorno local.
+Local port 5432 was already in use by another PostgreSQL instance, so verification used port 55432. `.env.example` is configured with that port for the local environment.
 
-## Fase 2.1 — Interfaz principal (2026-10-30)
+## Phase 2.1 — Main interface (2026-10-30)
 
-- [x] Interfaz oscura adaptable con header, estado real de PostgreSQL, sidebar y navegación pendiente deshabilitada.
-- [x] Editor PostgreSQL con CodeMirror 6, ejemplo válido y ejecución real desde el botón o Ctrl/⌘ + Enter.
-- [x] Métricas reales de tipo de consulta, coste estimado, filas, tiempo de ejecución, planificación y tiempo total.
-- [x] Árbol recursivo y expandible del plan recibido, con operaciones, coste, filas, tiempos y buffers disponibles.
-- [x] Visor de solo lectura del JSON de respuesta del API.
-- [x] Estados de espera y error; pestañas Results y Visual Flow deshabilitadas porque aún no existen esos datos o vistas.
-- [x] Paneles de esquema y flujo identificados como pendientes, sin dibujar estructuras ficticias.
-- [x] Build frontend, Docker Compose y flujo real de análisis verificados; vista de escritorio y móvil comprobadas sin desbordamiento horizontal.
+- [x] Responsive dark interface with a header, live PostgreSQL status, sidebar, and disabled pending navigation.
+- [x] PostgreSQL editor using CodeMirror 6, a valid example query, and execution from the button or Ctrl/⌘ + Enter.
+- [x] Live metrics for query type, estimated cost, rows, execution time, planning time, and total time.
+- [x] Recursive, expandable tree of the received plan, with operations, cost, rows, timing, and available buffer data.
+- [x] Read-only viewer for the API response JSON.
+- [x] Loading and error states; Results and Visual Flow tabs are disabled because the required data or views do not exist yet.
+- [x] Schema and flow panels are marked as pending without drawing fictitious structures.
+- [x] Verified the frontend build, Docker Compose, and live analysis flow; checked desktop and mobile views for horizontal overflow.
 
-## Fase 2.2 — Explorador de esquema y análisis visual avanzado
+## Phase 2.2 — Schema explorer and advanced visual analysis
 
-- [ ] Endpoint seguro para obtener el esquema real de la base de demostración.
-- [ ] Explorador de tablas y relaciones basado en los metadatos reales.
-- [ ] Selección y navegación por nodos del plan.
-- [ ] Identificación de operaciones potencialmente costosas mediante reglas explicables.
-- [ ] Métricas detalladas por nodo y contexto de buffers.
-- [ ] Explicaciones de las operaciones y estrategias de PostgreSQL.
+- [ ] Secure endpoint for retrieving the demo database's actual schema.
+- [ ] Table and relationship explorer based on actual metadata.
+- [ ] Selection and navigation between plan nodes.
+- [ ] Identification of potentially expensive operations using explainable rules.
+- [ ] Detailed per-node metrics and buffer context.
+- [ ] Explanations of PostgreSQL operations and strategies.
 
-## Fase 2.3 — Visual Execution Flow
+## Phase 2.3 — Visual execution flow
 
-- [ ] Diagrama interactivo generado exclusivamente a partir del plan real recibido.
-- [ ] Navegación entre nodos del diagrama y el árbol de ejecución.
+- [ ] Interactive diagram generated exclusively from the actual plan received.
+- [ ] Navigation between diagram nodes and the execution tree.
 
-## Fase 3 — Experimentos de optimización
+## Phase 3 — Optimization experiments
 
-- [ ] Creación y limpieza de índices temporales en entornos de prueba aislados.
-- [ ] Comparación antes y después de aplicar una optimización.
-- [ ] Historial de experimentos.
-- [ ] Comparación visual de planes de ejecución.
+- [ ] Create and clean up temporary indexes in isolated test environments.
+- [ ] Compare results before and after applying an optimization.
+- [ ] Experiment history.
+- [ ] Visual comparison of execution plans.
 
-## Fase 4 — Benchmarks reproducibles
+## Phase 4 — Reproducible benchmarks
 
-- [ ] Ejecución repetida de consultas con parámetros controlados.
-- [ ] Estadísticas de rendimiento, variabilidad y distribución.
-- [ ] Comparación con diferentes volúmenes de datos ficticios.
-- [ ] Exportación de resultados y configuración del benchmark.
+- [ ] Run queries repeatedly with controlled parameters.
+- [ ] Performance, variability, and distribution statistics.
+- [ ] Compare different volumes of fictitious data.
+- [ ] Export benchmark results and configuration.
 
-## Fase 5 — Mejoras del producto
+## Phase 5 — Product improvements
 
-- [ ] Guardar consultas y experimentos.
-- [ ] Importar y exportar escenarios reproducibles.
-- [ ] Recomendaciones basadas en reglas y evidencia del plan.
-- [ ] Mejoras de interfaz, accesibilidad y experiencia de usuario.
-
+- [ ] Save queries and experiments.
+- [ ] Import and export reproducible scenarios.
+- [ ] Recommendations based on rules and plan evidence.
+- [ ] Improvements to the interface, accessibility, and user experience.
