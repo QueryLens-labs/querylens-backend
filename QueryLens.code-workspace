@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "querylens-frontend",
+      "path": "../querylens-frontend"
+    },
+    {
+      "name": "querylens-backend",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.autoRepositoryDetection": true,
+    "git.repositoryScanMaxDepth": 2,
+    "git.openRepositoryInParentFolders": "never",
+    "scm.alwaysShowRepositories": true,
+    "scm.repositories.selectionMode": "multiple",
+    "scm.repositories.visible": 10
+  }
+}
