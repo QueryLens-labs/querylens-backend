@@ -6,6 +6,10 @@ Estas instrucciones cubren el backend y la infraestructura compartida. Cuando un
 
 QueryLens ayuda a analizar consultas PostgreSQL y comprender sus planes de ejecución. La Fase 1 implementa una API FastAPI de solo lectura, acceso a PostgreSQL y una interfaz React en el repositorio hermano. El roadmap futuro está en TODO.md; no implementes sus tareas sin una solicitud concreta.
 
+## Documentation language
+
+Keep this and the sibling repository's README.md entirely in English. When editing a README, write the complete document in English. Do not change the application UI language unless requested.
+
 ## Tecnologías
 
 - Backend: Python 3, FastAPI y Psycopg 3.
