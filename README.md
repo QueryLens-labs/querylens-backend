@@ -84,3 +84,15 @@ Open `QueryLens.code-workspace` in VS Code to load both repositories as separate
 The expected workspace contains exactly two sibling folders: `querylens-frontend` (https://github.com/QueryLens-labs/querylens-frontend) and `querylens-backend`.
 
 The QueryLens roadmap is maintained in [TODO.md](TODO.md).
+
+## License
+
+Copyright (c) 2026 J0x1N. All rights reserved.
+
+QueryLens is a personally owned project. Its source code
+is publicly available for viewing, but no open-source
+license is granted.
+
+Unauthorized use, modification, or redistribution of
+the source code is not permitted, except as allowed by
+applicable law or GitHub's Terms of Service.
