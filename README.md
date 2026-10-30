@@ -12,8 +12,8 @@ Este repositorio contiene la API FastAPI, el análisis y validación SQL, el acc
 
 Clona ambos repositorios dentro de QueryLensWorkspace, de modo que queden como carpetas hermanas:
 
-    git clone https://github.com/QueryLens/querylens-frontend.git
-    git clone https://github.com/QueryLens/querylens-backend.git
+    git clone https://github.com/querylens-labs/querylens-frontend.git
+    git clone https://github.com/querylens-labs/querylens-backend.git
     cd querylens-backend
 
 Si ya abriste QueryLens.code-workspace, puedes ejecutar estos comandos desde su terminal integrada.
@@ -36,7 +36,7 @@ Los scripts de inicialización solo se ejecutan cuando el volumen está vacío. 
 
 ## Ejecutar componentes fuera de Docker
 
-Para la API, arranca PostgreSQL con Compose y configura QUERYLENS_DB_HOST=localhost, QUERYLENS_DB_PORT=5432, QUERYLENS_DB_NAME=querylens, QUERYLENS_DB_USER=querylens_readonly y QUERYLENS_DB_PASSWORD según .env.
+Para la API, arranca PostgreSQL con Compose y configura QUERYLENS_DB_HOST=localhost, QUERYLENS_DB_PORT según `.env` (55432 en `.env.example`), QUERYLENS_DB_NAME=querylens, QUERYLENS_DB_USER=querylens_readonly y QUERYLENS_DB_PASSWORD según `.env`.
 
     py -m venv .venv
     .\.venv\Scripts\Activate.ps1
