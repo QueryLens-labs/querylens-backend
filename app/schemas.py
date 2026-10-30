@@ -34,5 +34,6 @@ class AnalyzeResponse(BaseModel):
 class HealthResponse(BaseModel):
     service: str
     database: str
+    database_name: str | None = None
     postgres_version: str | None = None
 

@@ -20,10 +20,13 @@ def health() -> HealthResponse:
     try:
         with connect() as connection:
             row = connection.execute(
-                "SELECT current_setting('server_version')"
+                "SELECT current_database(), current_setting('server_version')"
             ).fetchone()
         return HealthResponse(
-            service="ok", database="connected", postgres_version=row[0]
+            service="ok",
+            database="connected",
+            database_name=row[0],
+            postgres_version=row[1],
         )
     except Exception:
         logger.warning("Database health check failed")

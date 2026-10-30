@@ -52,3 +52,29 @@ def test_health_reports_unavailable_database(monkeypatch) -> None:
     assert response.status_code == 503
     assert "credentials" not in response.text
 
+
+def test_health_returns_database_name(monkeypatch) -> None:
+    class FakeCursor:
+        def fetchone(self):
+            return ("querylens", "17.11")
+
+    class FakeConnection:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def execute(self, statement):
+            assert "current_database()" in statement
+            return FakeCursor()
+
+    monkeypatch.setattr("app.main.connect", FakeConnection)
+    client = TestClient(app)
+
+    response = client.get("/api/health")
+
+    assert response.status_code == 200
+    assert response.json()["database"] == "connected"
+    assert response.json()["database_name"] == "querylens"
+
