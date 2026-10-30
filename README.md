@@ -81,6 +81,6 @@ pytest
 
 Open `QueryLens.code-workspace` in VS Code to load both repositories as separate folders and Git repositories. Project rules are in `AGENTS.md`; Claude Code should read `CLAUDE.md`. The custom QueryLens agent is in `.github/agents/querylens.agent.md`.
 
-The expected workspace contains exactly two sibling folders: `querylens-frontend` and `querylens-backend`.
+The expected workspace contains exactly two sibling folders: `querylens-frontend` (https://github.com/QueryLens-labs/querylens-frontend) and `querylens-backend`.
 
 The QueryLens roadmap is maintained in [TODO.md](TODO.md).
