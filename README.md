@@ -77,10 +77,14 @@ pip install -r requirements-dev.txt
 pytest
 ```
 
-## Workspace and project instructions
+## Workspace and roadmap
 
-Open `QueryLens.code-workspace` in VS Code to load both repositories as separate folders and Git repositories. Project rules are in `AGENTS.md`; Claude Code should read `CLAUDE.md`. The custom QueryLens agent is in `.github/agents/querylens.agent.md`.
+Open `QueryLens.code-workspace` in VS Code to load both repositories as separate folders and Git repositories.
 
 The expected workspace contains exactly two sibling folders: `querylens-frontend` and `querylens-backend`.
 
 The QueryLens roadmap is maintained in [TODO.md](TODO.md).
+
+## License
+
+QueryLens is licensed under the [MIT License](LICENSE). Third-party dependencies retain their own licenses.
